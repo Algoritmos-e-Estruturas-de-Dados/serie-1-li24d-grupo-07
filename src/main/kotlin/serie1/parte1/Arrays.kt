@@ -8,3 +8,7 @@ fun counter(array: IntArray, k: Int, lower: Int, upper: Int): Pair<Int, Int> {
     throw UnsupportedOperationException()
 }
 
+fun createSortedPartitions(fileName: String, partitionSize: Int): Int{
+    throw UnsupportedOperationException()
+}
+
