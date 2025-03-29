@@ -17,7 +17,21 @@ fun findMinDifference(elem1: IntArray, elem2: IntArray): Int {
 }
 
 fun counter(array: IntArray, k: Int, lower: Int, upper: Int): Pair<Int, Int> {
-    throw UnsupportedOperationException()
+    var count1 = 0
+    var count2 = 0
+    for (i in 0..array.size - k) {
+        var sum = 0
+        for (j in i until i + k) {
+            sum += array[j]
+        }
+        if (sum < lower) {
+            count1++
+        }
+        if (sum > upper) {
+            count2++
+        }
+    }
+    return Pair(count1, count2)
 }
 
 fun createSortedPartitions(fileName: String, partitionSize: Int): Int{
