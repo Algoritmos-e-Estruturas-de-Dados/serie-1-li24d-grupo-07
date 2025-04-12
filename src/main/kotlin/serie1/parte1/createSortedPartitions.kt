@@ -1,6 +1,6 @@
 package serie1.parte1
 
-import java.io.File                                             // Biblioteca implementar um ficheiro externo ao código
+import java.io.File                                             // Biblioteca implementa um ficheiro externo ao código
 
 fun createSortedPartitions(fileName: String, partitionSize: Int): Int {
     val file = File(fileName)                                   // Coloca o ficheiro numa variável
