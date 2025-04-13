@@ -58,8 +58,8 @@ fun mergeSortedFiles(numWays: Int, outputFilename: String) {
 }
 
 fun main() {
-    val inputFilename = "input.txt"
-    val outputFilename = "output.txt"
+    val inputFilename = "C:\\Users\\jaiso\\IdeaProjects\\test_1SERIE\\src\\input.txt"
+    val outputFilename = "C:\\Users\\jaiso\\IdeaProjects\\test_1SERIE\\src\\output.txt"
     val partitionSize = 1000
 
     // Criar subficheiros ordenados

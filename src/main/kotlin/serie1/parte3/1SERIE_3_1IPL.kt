@@ -7,7 +7,8 @@ import java.util.PriorityQueue
 fun createSortedPartitions(fileName: String, partitionSize: Int): Int {
     val file = File(fileName)
     val linesInFile = file.readLines().map { it.toInt() }
-    var numWays = linesInFile.size / partitionSize
+    // Corrigir o cálculo do número de subficheiros para lidar com números não divisíveis
+    var numWays = (linesInFile.size + partitionSize - 1) / partitionSize
     var index0 = 0
     for (i in 0 until numWays) {
         val index1 = if (index0 + partitionSize <= linesInFile.size) index0 + partitionSize else linesInFile.size
@@ -24,7 +25,7 @@ fun mergeSortedFiles(numWays: Int, outputFilename: String) {
     val queues = mutableListOf<PriorityQueue<Int>>()
 
     // Criar uma fila de prioridade para cada subficheiro
-    for (i in 1..numWays) {
+    for (i in 0 until numWays) {
         val subFile = File("$i.txt")
         val pq = PriorityQueue<Int>()
         pq.addAll(subFile.readLines().map { it.toInt() })
@@ -58,8 +59,9 @@ fun mergeSortedFiles(numWays: Int, outputFilename: String) {
 }
 
 fun main() {
-    val inputFilename = "input.txt"
-    val outputFilename = "output.txt"
+    // Certifique-se de que os ficheiros de entrada e saída estão corretamente configurados
+    val inputFilename = "C:\\Users\\jaiso\\IdeaProjects\\test_1SERIE\\src\\input.txt"
+    val outputFilename = "C:\\Users\\jaiso\\IdeaProjects\\test_1SERIE\\src\\output.txt"
     val partitionSize = 1000
 
     // Criar subficheiros ordenados
